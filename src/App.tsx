@@ -1,30 +1,21 @@
-import { SubmitHandler, useForm } from "react-hook-form";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-interface MyForm {
-    name: string;
-    age: number;
-}
+import RegisterFormPage from "./pages/registerForm";
+import MainPage from "./pages/main";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-    const { register, handleSubmit } = useForm<MyForm>({
-        defaultValues: {
-            age: 18,
-        },
-    });
-
-    const submit: SubmitHandler<MyForm> = (data) => {
-        console.log(data);
-    };
-
     return (
-        <>
-            <form onSubmit={handleSubmit(submit)}>
-                <input type="text" {...register("name", { required: true })}></input>
-                <input type="number" {...register("age", { required: true })}></input>
-                <button>Send</button>
-            </form>
-        </>
+        <div>
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/register_form" element={<RegisterFormPage />} />
+                </Routes>
+            </Router>
+        </div>
     );
 }
 
