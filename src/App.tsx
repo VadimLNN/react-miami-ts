@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@mui/material";
 import "./App.css";
 
 import { FormDemo } from "./pages/myForm";
 // import MainPage from "./pages/main";
 // import Navbar from "./components/Navbar/Navbar";
 import { MuiRegisterForm } from "./pages/registerForm";
+import DemoTheme from "./components/DemoTheme/demoTheme";
 
 function App() {
     return (
-        <div>
+        <ThemeProvider theme={DemoTheme()}>
             <Router>
                 {/* <Navbar /> */}
                 <Routes>
@@ -17,7 +19,7 @@ function App() {
                     <Route path="/register_form" element={<FormDemo />} />
                 </Routes>
             </Router>
-        </div>
+        </ThemeProvider>
     );
 }
 
