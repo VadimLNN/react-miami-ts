@@ -6,7 +6,6 @@ const RadioGroupGender = () => {
     const dispatch = useAppDispatch();
 
     const changeGender = (_value: any, gender: string) => {
-        // console.log(register);
         dispatch(handleChangeGender(gender));
     };
 
