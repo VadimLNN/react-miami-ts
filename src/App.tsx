@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import RegisterFormPage from "./pages/myForm";
+import { FormDemo } from "./pages/myForm";
 // import MainPage from "./pages/main";
 // import Navbar from "./components/Navbar/Navbar";
 import { MuiRegisterForm } from "./pages/registerForm";
@@ -12,9 +12,9 @@ function App() {
             <Router>
                 {/* <Navbar /> */}
                 <Routes>
-                    <Route path="/" element={<MuiRegisterForm />} />
                     {/* <Route path="/" element={<MainPage />} /> */}
-                    <Route path="/register_form" element={<RegisterFormPage />} />
+                    <Route path="/" element={<MuiRegisterForm />} />
+                    <Route path="/register_form" element={<FormDemo />} />
                 </Routes>
             </Router>
         </div>
