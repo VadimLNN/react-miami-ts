@@ -17,7 +17,7 @@ export default function DatePickerValue() {
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
-                <DatePicker label="Дата рождения" defaultValue={dayjs("2024-06-11")} onChange={(x) => changeDate(x)} />
+                <DatePicker label="Дата рождения" defaultValue={dayjs("")} onChange={(x) => changeDate(x)} />
             </DemoContainer>
         </LocalizationProvider>
     );
