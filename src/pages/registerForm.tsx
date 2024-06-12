@@ -1,6 +1,8 @@
 import { TextField, Button, Stack, FormControlLabel, Typography, Grid, Paper, Checkbox } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import DatePickerValue from "../components/DatePicker/muiDatePiker";
 import BasicSelect from "../components/Select/muiSelect";
 import RadioGroupGender from "../components/RadioGroup/radioGroup";
@@ -43,6 +45,8 @@ export const MuiRegisterForm = () => {
 
         console.log(data);
     };
+
+    const notify = () => toast("Заскамили мамонта");
 
     return (
         <Paper
@@ -93,11 +97,13 @@ export const MuiRegisterForm = () => {
                             control={<Checkbox />}
                             label="Я принимаю условия Лицензионного соглашения, Политики конфиденциальности и даю согласие на обработку данных обо мне."
                             labelPlacement="end"
+                            {...register("agree", { required: "Agree is requied" })}
                         />
 
-                        <Button type="submit" variant="contained" color="primary">
+                        <Button type="submit" variant="contained" color="primary" onClick={notify}>
                             Login
                         </Button>
+                        <ToastContainer />
                     </Stack>
                 </form>
                 <DevTool control={control} />
