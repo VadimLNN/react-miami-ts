@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import DatePickerValue from "../components/DatePicker/muiDatePiker";
-import BasicSelect from "../components/Select/muiSelect";
-import RadioGroupGender from "../components/RadioGroup/radioGroup";
+import DatePickerValue from "../components/form-components/muiDatePiker";
+import BasicSelect from "../components/form-components/muiSelect";
+import RadioGroupGender from "../components/form-components/radioGroup";
 import { useAppSelector } from "../hook";
 
 type FormValues = {
@@ -49,15 +49,7 @@ export const MuiRegisterForm = () => {
     const notify = () => toast("Заскамили мамонта");
 
     return (
-        <Paper
-            sx={{
-                p: 2,
-                margin: "auto",
-                maxWidth: 500,
-                flexGrow: 1,
-                backgroundColor: (theme) => (theme.palette.mode === "dark" ? "#1A2027" : "#fff"),
-            }}
-        >
+        <Paper>
             <Grid>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Stack spacing={2} width={500}>
