@@ -1,22 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
-import "./App.css";
 
 import { FormDemo } from "./pages/myForm";
-// import MainPage from "./pages/main";
-// import Navbar from "./components/Navbar/Navbar";
+import MainPage from "./pages/main";
+import Navbar from "./components/Navbar/Navbar";
 import { MuiRegisterForm } from "./pages/registerForm";
 import DemoTheme from "./components/DemoTheme/demoTheme";
+import "./App.css";
 
 function App() {
     return (
         <ThemeProvider theme={DemoTheme()}>
             <Router>
-                {/* <Navbar /> */}
+                <Navbar />
+
                 <Routes>
-                    {/* <Route path="/" element={<MainPage />} /> */}
-                    <Route path="/" element={<MuiRegisterForm />} />
-                    <Route path="/register_form" element={<FormDemo />} />
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/mainForm" element={<MuiRegisterForm />} />
+                    <Route path="/secondForm" element={<FormDemo />} />
                 </Routes>
             </Router>
         </ThemeProvider>
