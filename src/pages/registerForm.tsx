@@ -1,16 +1,18 @@
-import { TextField, Button, Stack, FormControlLabel, Typography, Grid, Paper, Checkbox } from "@mui/material";
+import { TextField, Button, Stack, FormControlLabel, Typography, Grid, Paper, Checkbox, Card } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import DatePickerValue from "../components/form-components/muiDatePiker";
+import DatePickerValue from "../components/form-components/DatePickerValue";
 import BasicSelect from "../components/form-components/muiSelect";
 import RadioGroupGender from "../components/form-components/radioGroup";
 import { useAppSelector } from "../hook";
+import muiDatePiker from "../components/form-components/DatePickerValue";
 
 type FormValues = {
-    fio: string;
-    date_of_birth: string;
+    name: string;
+    surname: string;
+    dateOfBirth: string;
     gender: string;
     city: string;
     email: string;
@@ -21,8 +23,9 @@ type FormValues = {
 export const MuiRegisterForm = () => {
     const form = useForm<FormValues>({
         defaultValues: {
-            fio: "",
-            date_of_birth: "",
+            name: "",
+            surname: "",
+            dateOfBirth: "",
             gender: "",
             city: "",
             email: "",
@@ -39,9 +42,9 @@ export const MuiRegisterForm = () => {
     const gendr = useAppSelector((state) => state.formReduser.gender);
 
     const onSubmit = (data: FormValues) => {
-        data.date_of_birth = date;
-        data.city = city;
-        data.gender = gendr;
+        // data.dateOfBirth = date;
+        // data.city = city;
+        // data.gender = gendr;
 
         console.log(data);
     };
@@ -49,27 +52,35 @@ export const MuiRegisterForm = () => {
     const notify = () => toast("Заскамили мамонта");
 
     return (
-        <Paper>
+        <Card>
             <Grid>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Stack spacing={2} width={500}>
                         <Typography variant="h4">Регистрация</Typography>
 
-                        <TextField
-                            label="ФИО"
-                            type="fio"
-                            {...register("fio", { required: "FIO is requied" })}
+                        {/* <TextField
+                            label="Имя"
+                            type="name"
+                            {...register("name", { required: "Это поле обязательно" })}
                             error={!!errors.password}
                             helperText={errors.password?.message}
                         />
 
-                        <DatePickerValue />
-
-                        <RadioGroupGender />
-
-                        <BasicSelect />
-
                         <TextField
+                            label="Фамилия"
+                            type="surname"
+                            {...register("surname", { required: "Это поле обязательно" })}
+                            error={!!errors.password}
+                            helperText={errors.password?.message}
+                        /> */}
+
+                        <DatePickerValue name={"dateOfBirth"} control={control} label={"Дата рождения"} />
+
+                        {/* <RadioGroupGender name={"gender"} control={control} label={"Пол "} /> */}
+
+                        {/* <BasicSelect /> */}
+
+                        {/* <TextField
                             label="Почта"
                             type="email"
                             {...register("email", { required: "Email is requied" })}
@@ -82,15 +93,15 @@ export const MuiRegisterForm = () => {
                             {...register("password", { required: "Password is requied" })}
                             error={!!errors.password}
                             helperText={errors.password?.message}
-                        />
+                        /> */}
 
-                        <FormControlLabel
+                        {/* <FormControlLabel
                             value={true}
                             control={<Checkbox />}
                             label="Я принимаю условия Лицензионного соглашения, Политики конфиденциальности и даю согласие на обработку данных обо мне."
                             labelPlacement="end"
                             {...register("agree", { required: "Agree is requied" })}
-                        />
+                        /> */}
 
                         <Button type="submit" variant="contained" color="primary" onClick={notify}>
                             Login
@@ -100,6 +111,6 @@ export const MuiRegisterForm = () => {
                 </form>
                 <DevTool control={control} />
             </Grid>
-        </Paper>
+        </Card>
     );
 };

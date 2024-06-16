@@ -1,12 +1,16 @@
-import dayjs from "dayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
+import { Controller } from "react-hook-form";
+
 import { useAppDispatch } from "../../hook";
 import { handleChangeDate } from "../../store/formSlice";
 
-export default function DatePickerValue() {
+import { FormInputProps } from "./FormInputProps";
+
+const DatePickerValue = ({ name, control, label }: FormInputProps) => {
     const dispatch = useAppDispatch();
 
     const changeDate = (x: any) => {
@@ -17,8 +21,14 @@ export default function DatePickerValue() {
     return (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DemoContainer components={["DatePicker"]}>
-                <DatePicker label="Дата рождения" defaultValue={dayjs("")} onChange={(x) => changeDate(x)} />
+                <Controller
+                    name={name}
+                    control={control}
+                    render={({ field }) => <DatePicker onChange={(date) => field.onChange(date)} />}
+                ></Controller>
             </DemoContainer>
         </LocalizationProvider>
     );
-}
+};
+
+export default DatePickerValue;
