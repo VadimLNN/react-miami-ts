@@ -8,7 +8,7 @@ import { handleChangeSelect } from "../../store/formSlice";
 import { FormInputProps } from "./FormInputProps";
 import { Controller } from "react-hook-form";
 
-const BasicSelect = ({ name, control, label }: FormInputProps) => {
+const CityMuiBasicSelect = ({ name, control, label, errors }: FormInputProps) => {
     const changeCityName = (event: SelectChangeEvent) => dispatch(handleChangeSelect(event.target.value));
     const dispatch = useAppDispatch();
     const city = useAppSelector((state) => state.formReduser.cityName);
@@ -20,6 +20,7 @@ const BasicSelect = ({ name, control, label }: FormInputProps) => {
                 <Controller
                     name={name}
                     control={control}
+                    rules={{ required: true }}
                     render={({ field }) => (
                         <Select
                             labelId="demo-simple-select-label"
@@ -39,4 +40,4 @@ const BasicSelect = ({ name, control, label }: FormInputProps) => {
     );
 };
 
-export default BasicSelect;
+export default CityMuiBasicSelect;

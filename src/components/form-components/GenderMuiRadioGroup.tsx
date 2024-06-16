@@ -4,7 +4,7 @@ import { useAppDispatch } from "../../hook";
 import { handleChangeGender } from "../../store/formSlice";
 import { FormInputProps } from "./FormInputProps";
 
-const RadioGroupGender = ({ name, control, label }: FormInputProps) => {
+const GenderMuiRadioGroup = ({ name, control, label, errors }: FormInputProps) => {
     const dispatch = useAppDispatch();
 
     const changeGender = (_value: any, gender: string) => {
@@ -18,6 +18,7 @@ const RadioGroupGender = ({ name, control, label }: FormInputProps) => {
                 <Controller
                     name={name}
                     control={control}
+                    rules={{ required: true }}
                     render={({ field }) => (
                         <RadioGroup name="gender" onChange={(gend) => field.onChange(gend)}>
                             <FormControlLabel value="female" label="Ж" control={<Radio />} />
@@ -30,4 +31,4 @@ const RadioGroupGender = ({ name, control, label }: FormInputProps) => {
     );
 };
 
-export default RadioGroupGender;
+export default GenderMuiRadioGroup;
