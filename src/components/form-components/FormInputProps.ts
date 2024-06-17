@@ -3,4 +3,5 @@ export interface FormInputProps {
     control: any;
     label: string;
     setValue?: any;
+    errors?: any;
 }
