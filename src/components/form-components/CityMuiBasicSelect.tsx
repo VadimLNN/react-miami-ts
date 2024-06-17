@@ -1,21 +1,16 @@
+import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Box from "@mui/material/Box";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { useAppDispatch, useAppSelector } from "../../hook";
-import { handleChangeSelect } from "../../store/formSlice";
-import { FormInputProps } from "./FormInputProps";
 import { Controller } from "react-hook-form";
+import { FormInputProps } from "./FormInputProps";
+import { FormHelperText } from "@mui/material";
 
 const CityMuiBasicSelect = ({ name, control, label, errors }: FormInputProps) => {
-    const changeCityName = (event: SelectChangeEvent) => dispatch(handleChangeSelect(event.target.value));
-    const dispatch = useAppDispatch();
-    const city = useAppSelector((state) => state.formReduser.cityName);
-
     return (
         <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
+            <FormControl fullWidth error={errors.city}>
                 <InputLabel id="demo-simple-select-label">{label}</InputLabel>
                 <Controller
                     name={name}
@@ -34,7 +29,8 @@ const CityMuiBasicSelect = ({ name, control, label, errors }: FormInputProps) =>
                             <MenuItem value={"г. Бердск"}>Бердск</MenuItem>
                         </Select>
                     )}
-                ></Controller>
+                />
+                <FormHelperText>{errors.city && <p style={{ color: "error" }}>{errors.city.message}</p>}</FormHelperText>
             </FormControl>
         </Box>
     );
