@@ -6,7 +6,7 @@ import { FormHelperText } from "@mui/material";
 const AgreeMuiCheckbox = ({ name, control, label, errors }: FormInputProps) => {
     return (
         <Box>
-            <FormControl error={errors.agree}>
+            <FormControl error={errors.agree ? true : false}>
                 <FormControlLabel
                     onError={errors.city}
                     labelPlacement="end"

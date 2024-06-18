@@ -10,7 +10,7 @@ import { FormHelperText } from "@mui/material";
 const CityMuiBasicSelect = ({ name, control, label, errors }: FormInputProps) => {
     return (
         <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth error={errors.city}>
+            <FormControl fullWidth error={errors.city ? true : false}>
                 <InputLabel id="demo-simple-select-label">{label}</InputLabel>
                 <Controller
                     name={name}
