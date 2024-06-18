@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 
-import { FormDemo } from "./pages/myForm";
 import MainPage from "./pages/main";
 import Navbar from "./components/Navbar/Navbar";
 import { MuiRegisterForm } from "./pages/registerForm";
 import DemoTheme from "./components/DemoTheme/demoTheme";
+import CampingSeasons from "./pages/campingSeason";
 import "./App.css";
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<MainPage />} />
-                    <Route path="/mainForm" element={<MuiRegisterForm />} />
-                    <Route path="/secondForm" element={<FormDemo />} />
+                    <Route path="/mainform" element={<MuiRegisterForm />} />
+                    <Route path="/campingSeasons" element={<CampingSeasons />} />
                 </Routes>
             </Router>
         </ThemeProvider>
