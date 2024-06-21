@@ -29,32 +29,18 @@ const secondApiAxios = axios.create({
 
 // async await style
 export const getPosts = async () => {
-    try {
-        const res = await firstApiAxios.get(`/posts`, {
-            params: { offset: 0, limit: 10 },
-        });
-        console.log(res.data);
-    } catch (error) {
-        if (axios.isAxiosError(error)) {
-            console.log(error, "err");
-            console.log(error.response?.data.errText, "error");
-        } else if (error instanceof Error) console.log(error.message);
-    }
+    const res = await firstApiAxios.get(`/posts`, {
+        params: { offset: 0, limit: 10 },
+    });
+    console.log(res.data);
 };
 
 export const createPost = async () => {
-    try {
-        const res = await firstApiAxios.post(`/posts`, {
-            body: "world",
-            title: "helo",
-        });
-        console.log(res.data);
-    } catch (error) {
-        if (axios.isAxiosError(error)) {
-            console.log(error, "err");
-            console.log(error.response?.data.errText, "error");
-        } else if (error instanceof Error) console.log(error.message);
-    }
+    const res = await firstApiAxios.post(`/posts`, {
+        body: "world",
+        title: "helo",
+    });
+    console.log(res.data);
 };
 
 export const getImg = async () => {
@@ -68,3 +54,16 @@ export const getImg = async () => {
         } else if (error instanceof Error) console.log(error.message);
     }
 };
+
+firstApiAxios.interceptors.response.use(
+    (res) => {
+        console.log(res.status, "int res");
+        return res;
+    },
+    (error: any) => {
+        if (axios.isAxiosError(error)) {
+            console.log(error, "err");
+            console.log(error.response?.data.errText, "error");
+        } else if (error instanceof Error) console.log(error.message);
+    }
+);
