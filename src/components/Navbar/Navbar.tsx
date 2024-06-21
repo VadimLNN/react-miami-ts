@@ -14,10 +14,10 @@ export default function Navbar() {
                 </Typography>
                 <Stack direction="row" spacing={2}>
                     <NavLink to="/mainForm">
-                        <Button color="inherit">MainForm</Button>
+                        <Button color="inherit">form</Button>
                     </NavLink>
-                    <NavLink to="/secondForm">
-                        <Button color="inherit">SecondForm</Button>
+                    <NavLink to="/campingSeasons">
+                        <Button color="inherit">camp</Button>
                     </NavLink>
                     <NavLink to="/">
                         <Button color="inherit">Some thing</Button>
