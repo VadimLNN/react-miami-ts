@@ -1,5 +1,7 @@
 import axios from "axios";
 
+export const getPostsController = new AbortController();
+
 const FIRST_API_URL = "https://jsonplaceholder.typicode.com/";
 const SECOND_API_URL = "https://fakerapi.it/api/v1";
 
@@ -31,6 +33,7 @@ const secondApiAxios = axios.create({
 export const getPosts = async () => {
     const res = await firstApiAxios.get(`/posts`, {
         params: { offset: 0, limit: 10 },
+        signal: getPostsController.signal,
     });
     console.log(res.data);
 };
