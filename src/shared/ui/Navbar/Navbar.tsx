@@ -97,7 +97,9 @@ export default function Navbar() {
                     </SwipeableDrawer>
 
                     <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                        Miami
+                        <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
+                            Miami
+                        </NavLink>
                     </Typography>
 
                     <IconButton color="inherit">
