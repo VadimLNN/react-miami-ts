@@ -1,14 +1,14 @@
-import { TextField, Button, Stack, Typography, Card, FormControlLabel, Checkbox, FormHelperText } from "@mui/material";
+import { TextField, Button, Stack, Typography, Card } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { DevTool } from "@hookform/devtools";
 import "react-toastify/dist/ReactToastify.css";
-import DatePickerValue from "../components/form-components/MuiDatePickerValue";
-import CityMuiBasicSelect from "../components/form-components/CityMuiBasicSelect";
-import GenderMuiRadioGroup from "../components/form-components/GenderMuiRadioGroup";
-import AgreeMuiCheckbox from "../components/form-components/AgreeMuiCheckbox";
+import DatePickerValue from "./ui/MuiDatePickerValue";
+import CityMuiBasicSelect from "./ui/CityMuiBasicSelect";
+import GenderMuiRadioGroup from "./ui/GenderMuiRadioGroup";
+import AgreeMuiCheckbox from "./ui/AgreeMuiCheckbox";
 
 type FormValues = {
     name: string;
@@ -22,19 +22,6 @@ type FormValues = {
 };
 
 export const MuiRegisterForm = () => {
-    // const form = useForm<FormValues>({
-    //     defaultValues: {
-    //         name: "",
-    //         surname: "",
-    //         dateOfBirth: "",
-    //         gender: "",
-    //         city: "",
-    //         email: "",
-    //         password: "",
-    //         agree: false,
-    //     },
-    // });
-
     const validationSchema = yup.object({
         name: yup.string().required("Это поле обязательно"),
         surname: yup.string().required("Это поле обязательно"),

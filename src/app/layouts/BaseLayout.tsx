@@ -1,14 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+import DemoTheme from "../providers/ThemeProvider";
+import Navbar from "../../components/Navbar/Navbar";
+import CampingSeasons from "../../pages/CampingSeasons/campingSeason";
+import { MuiRegisterForm } from "../../pages/Sign-in_Sign-up/registerForm";
+import MainPage from "../../pages/Main/main";
 
-import MainPage from "./pages/main";
-import Navbar from "./components/Navbar/Navbar";
-import { MuiRegisterForm } from "./pages/registerForm";
-import DemoTheme from "./components/DemoTheme/demoTheme";
-import CampingSeasons from "./pages/campingSeason";
-import "./App.css";
-
-function App() {
+function BaseLayout() {
     return (
         <ThemeProvider theme={DemoTheme()}>
             <Router>
@@ -24,4 +22,4 @@ function App() {
     );
 }
 
-export default App;
+export default BaseLayout;

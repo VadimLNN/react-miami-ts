@@ -2,10 +2,10 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import { FormHelperText } from "@mui/material";
 import Box from "@mui/material/Box";
 import { Controller } from "react-hook-form";
 import { FormInputProps } from "./FormInputProps";
-import { FormHelperText } from "@mui/material";
 
 const CityMuiBasicSelect = ({ name, control, label, errors }: FormInputProps) => {
     return (
