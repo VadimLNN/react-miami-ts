@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { createPost, getImg, getPosts, getPostsController } from "../components/api/requests";
 import { Card } from "@mui/material";
 
