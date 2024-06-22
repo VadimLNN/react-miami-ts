@@ -8,7 +8,7 @@ import theme from "./ui/russoOneFontTheme";
 const CampingSeasons = () => {
     const [state, setState] = useState("");
     const doSomethingWith = () => {
-        console.log("Ы ");
+        console.log(`${state} `);
     };
     return (
         <Grid2 container spacing={2}>
