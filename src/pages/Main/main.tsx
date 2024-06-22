@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { createPost, getImg, getPosts, getPostsController } from "./api/requests";
 import { Card } from "@mui/material";
 
-const MainPage = () => {
+const Main = () => {
     useEffect(() => {
         //promis style
         //getPosts.then((res) => console.log(res)).catch((err) => console.log(err));
@@ -16,4 +16,4 @@ const MainPage = () => {
     return <Card></Card>;
 };
 
-export default MainPage;
+export default Main;
