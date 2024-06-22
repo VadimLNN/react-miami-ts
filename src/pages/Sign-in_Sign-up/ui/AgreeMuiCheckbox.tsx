@@ -1,4 +1,4 @@
-import { Checkbox, Box, InputLabel, FormControl, FormControlLabel } from "@mui/material";
+import { Checkbox, Box, FormControl, FormControlLabel } from "@mui/material";
 import { Controller } from "react-hook-form";
 import { FormInputProps } from "./FormInputProps";
 import { FormHelperText } from "@mui/material";

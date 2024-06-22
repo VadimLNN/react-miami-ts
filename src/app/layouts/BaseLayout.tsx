@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import DemoTheme from "../providers/ThemeProvider";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../shared/ui/Navbar";
 import CampingSeasons from "../../pages/CampingSeasons/campingSeason";
 import { MuiRegisterForm } from "../../pages/Sign-in_Sign-up/registerForm";
 import MainPage from "../../pages/Main/main";

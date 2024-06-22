@@ -3,7 +3,7 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
 import TuneIcon from "@mui/icons-material/Tune";
-import theme from "../../components/russoOneFontTheme";
+import theme from "./ui/russoOneFontTheme";
 
 const CampingSeasons = () => {
     const [state, setState] = useState("");

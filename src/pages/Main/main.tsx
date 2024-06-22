@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { createPost, getImg, getPosts, getPostsController } from "../components/api/requests";
+import { createPost, getImg, getPosts, getPostsController } from "./api/requests";
 import { Card } from "@mui/material";
 
 const MainPage = () => {
