@@ -1,13 +1,12 @@
 // import { useEffect } from "react";
 // import { createPost, getImg, getPosts, getPostsController } from "./api/requests";
-import { Box, Button, Card, CardMedia, Grid, ImageList, ImageListItem, Stack, Typography } from "@mui/material";
+import { Box, Button, CardMedia, ImageList, ImageListItem, Stack, Typography } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
 import img_tents from "../../shared/ui/imgs/tents.png";
 import img_peop1 from "../../shared/ui/imgs/peop1.png";
 import img_peop2 from "../../shared/ui/imgs/peop2.png";
 import img_peop3 from "../../shared/ui/imgs/peop3.png";
-import { ThemeProvider } from "@emotion/react";
 import theme from "./ui/mainTheme";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import Safety from "./ui/Safety";
 import Specialists from "./ui/Specialists";
 import Education from "./ui/Education";
@@ -16,6 +15,8 @@ import Level1 from "./ui/Level1";
 import Level2 from "./ui/Level2";
 import Level3 from "./ui/Level3";
 import Skills from "./ui/Skills";
+import FAQ from "./ui/Faq";
+import Contacts from "./ui/Contacts";
 
 const Main = () => {
     // useEffect(() => {
@@ -34,7 +35,7 @@ const Main = () => {
     return (
         <>
             <Stack sx={{ padding: "8px" }}>
-                <CardMedia component="img" height="310" image={img_tents} sx={{ borderRadius: 5 }} />
+                <CardMedia component="img" height="320" image={img_tents} sx={{ borderRadius: 5 }} />
                 <Typography variant="h4" sx={{ marginTop: "1em", fontFamily: "Roboto Black 900" }}>
                     Погрузись в индустрию IT с детства 🔥
                 </Typography>
@@ -120,7 +121,12 @@ const Main = () => {
                     Наши наставники - это профессионалы своего дела, разделяющие ценности нашего движения.
                 </Typography>
                 <Skills />
-                <Grid2></Grid2>
+
+                {/* <div className="FAQ" ref={FAQ}> */}
+                <FAQ />
+                {/* </div> */}
+
+                <Contacts />
             </Stack>
         </>
     );
