@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
+import "@fontsource/roboto/500.css";
 const DemoTheme = () => {
     return createTheme({
         components: {
@@ -7,6 +8,13 @@ const DemoTheme = () => {
                 styleOverrides: {
                     root: {
                         display: "flex",
+                    },
+                },
+            },
+            MuiButton: {
+                styleOverrides: {
+                    root: {
+                        textTransform: "none",
                     },
                 },
             },
@@ -18,6 +26,9 @@ const DemoTheme = () => {
             secondary: {
                 main: "#E34E30",
             },
+        },
+        typography: {
+            fontFamily: "Roboto",
         },
     });
 };
