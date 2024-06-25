@@ -1,24 +1,59 @@
-import { TextField, Stack, Card } from "@mui/material";
-import { Box, ThemeProvider, Typography, Button, CardMedia } from "@mui/material";
+import { TextField, Stack, alpha } from "@mui/material";
+import { Box, ThemeProvider, Typography, Button } from "@mui/material";
 import * as yup from "yup";
+import { createTheme } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { DevTool } from "@hookform/devtools";
-import img_list from "../../../shared/ui/imgs/list.png";
 import "react-toastify/dist/ReactToastify.css";
-// import theme from "./ui/FormTheme";
+
+const theme = createTheme({
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    textTransform: "none",
+                    padding: "0.7em",
+                },
+            },
+        },
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    // Root class for the input field
+                    "& .MuiOutlinedInput-root": {
+                        color: "FFFFFF",
+                        bgcolor: alpha("#FFFFFF", 0.1),
+                        borderRadius: "15px",
+                        // Class for the border around the input field
+                        "& .MuiOutlinedInput-notchedOutline": {
+                            borderColor: "#FFFFFF",
+                        },
+                        "& .MuiOutlinedInput-notchedOutline.active": {
+                            borderColor: "#FFFFFF",
+                        },
+                    },
+                    // Class for the label of the input field
+                    "& .MuiInputLabel-outlined": {
+                        color: alpha("#FFFFFF", 0.5),
+                    },
+                },
+            },
+        },
+    },
+});
 
 const Contacts = () => {
     type FormValues = {
         name: string;
         email: string;
-        phone: string;
+        t_number: string;
     };
     const validationSchema = yup.object({
         name: yup.string().required("Это поле обязательно"),
         email: yup.string().required("Это поле обязательно"),
-        phone: yup.string().required("Это поле обязательно"),
+        t_number: yup.string().required("Это поле обязательно"),
     });
 
     const formOptions = { resolver: yupResolver(validationSchema) };
@@ -33,23 +68,23 @@ const Contacts = () => {
 
     const notify = () => toast("Заскамили мамонта");
     return (
-        <Box
-            sx={{
-                width: 340,
-                height: 550,
-                marginTop: 3,
-                borderRadius: 4,
+        <ThemeProvider theme={theme}>
+            <Box
+                sx={{
+                    width: 340,
+                    height: 550,
+                    marginTop: 3,
+                    borderRadius: 4,
 
-                background: "radial-gradient(#3E7CFE, #2850A3)",
-            }}
-        >
-            <Typography sx={{ fontSize: "24px", marginTop: "1em", lineHeight: "1.5", color: "white", marginLeft: "14px" }}>
-                Оставьте контакты, и мы поможем подобрать IT-смену для вашего ребенка
-            </Typography>
+                    background: "radial-gradient(#3E7CFE, #2850A3)",
+                }}
+            >
+                <Typography sx={{ fontSize: "24px", marginTop: "1em", lineHeight: "1.5", color: "white", marginLeft: "14px" }}>
+                    Оставьте контакты, и мы поможем подобрать IT-смену для вашего ребенка
+                </Typography>
 
-            <Card>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <Stack spacing={2}>
+                    <Stack spacing={2} sx={{ padding: "1em" }}>
                         <TextField
                             label="Имя"
                             type="name"
@@ -57,7 +92,6 @@ const Contacts = () => {
                             error={!!errors.name}
                             helperText={errors.name?.message}
                         />
-
                         <TextField
                             label="Почта"
                             type="email"
@@ -65,29 +99,39 @@ const Contacts = () => {
                             error={!!errors.email}
                             helperText={errors.email?.message}
                         />
+                        <TextField
+                            label="Телефон"
+                            type="t_number"
+                            {...register("t_number", { required: "t_number is requied" })}
+                            error={!!errors.t_number}
+                            helperText={errors.t_number?.message}
+                        />
                     </Stack>
+                    <Button
+                        fullWidth
+                        variant="contained"
+                        sx={{
+                            width: "310px",
+                            marginTop: "1em",
+                            background: "linear-gradient(to right, #EE2F53, #992037)",
+                            borderRadius: 3,
+                            marginLeft: "14px",
+                        }}
+                    >
+                        Отправить
+                    </Button>
                 </form>
                 <DevTool control={control} />
-            </Card>
 
-            <Button
-                fullWidth
-                variant="contained"
-                sx={{
-                    width: "310px",
-                    marginTop: "1em",
-                    background: "linear-gradient(to right, #EE2F53, #992037)",
-                    borderRadius: 3,
-                    marginLeft: "14px",
-                }}
-            >
-                Отправить
-            </Button>
-            <Typography sx={{ fontSize: "14px", marginTop: "1em", lineHeight: "1.5", color: "white", marginLeft: "14px" }}>
-                Нажимая кнопку, я соглашаюсь с Положением о персональных данных и даю согласие на их обработку и хранение
-            </Typography>
-        </Box>
-        // </ThemeProvider>
+                <Typography sx={{ fontSize: "14px", marginTop: "1em", lineHeight: "1.5", color: "white", marginLeft: "14px" }}>
+                    Нажимая кнопку, я соглашаюсь с{" "}
+                    <a href="" style={{ color: "white" }}>
+                        Положением о персональных данных
+                    </a>{" "}
+                    и даю согласие на их обработку и хранение
+                </Typography>
+            </Box>
+        </ThemeProvider>
     );
 };
 
