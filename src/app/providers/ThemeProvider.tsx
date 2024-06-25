@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
-
 import "@fontsource/roboto/500.css";
+
 const DemoTheme = () => {
     return createTheme({
         components: {
@@ -15,6 +15,7 @@ const DemoTheme = () => {
                 styleOverrides: {
                     root: {
                         textTransform: "none",
+                        padding: "0.7em",
                     },
                 },
             },
