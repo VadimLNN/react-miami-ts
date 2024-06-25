@@ -1,35 +1,22 @@
-import { Box, ThemeProvider, Typography } from "@mui/material";
+import { Box, CardMedia, Typography } from "@mui/material";
+
+import imglav1 from "../../../shared/ui/imgs/heart1.png";
 
 const Level1 = () => {
     return (
-        <ThemeProvider
-            theme={{
-                palette: {
-                    primary: {
-                        main: "#E4ECFD",
-                    },
-                },
+        <Box
+            sx={{
+                padding: "1.3em",
+                borderRadius: 4,
+                bgcolor: "hsla(221, 86%, 94%, 1)",
             }}
         >
-            <Box
-                sx={{
-                    width: 100,
-                    height: 130,
-                    marginTop: 3,
-                    borderRadius: 4,
-                    display: "inline",
-                    bgcolor: "primary.main",
-                    "&:hover": {
-                        bgcolor: "primary.dark",
-                    },
-                }}
-            >
-                <Typography sx={{ fontSize: "12px", textAlignLast: "center", marginTop: "1em", lineHeight: "" }}>
-                    Если Вы <br /> только <br />
-                    начинаете
-                </Typography>
-            </Box>
-        </ThemeProvider>
+            <Typography sx={{ fontSize: "12px", textAlignLast: "center", lineHeight: "1" }}>
+                Если Вы <br /> только <br />
+                начинаете
+            </Typography>
+            <CardMedia component="img" height="45" image={imglav1} sx={{ borderRadius: 5, objectFit: "contain", marginTop: "0.3em" }} />
+        </Box>
     );
 };
 export default Level1;
