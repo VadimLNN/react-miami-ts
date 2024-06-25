@@ -17,7 +17,6 @@ import Level3 from "./ui/Level3";
 import Skills from "./ui/Skills";
 import FAQ from "./ui/Faq";
 import Contacts from "./ui/Contacts";
-
 const Main = () => {
     // useEffect(() => {
     //     //promis style
@@ -34,7 +33,7 @@ const Main = () => {
 
     return (
         <>
-            <Stack sx={{ padding: "8px" }}>
+            <Stack sx={{ padding: "0.5em" }}>
                 <CardMedia component="img" height="320" image={img_tents} sx={{ borderRadius: 5 }} />
                 <Typography variant="h4" sx={{ marginTop: "1em", fontFamily: "Roboto Black 900" }}>
                     Погрузись в индустрию IT с детства 🔥
@@ -89,6 +88,7 @@ const Main = () => {
                         </ImageListItem>
                     ))}
                 </ImageList>
+
                 <Typography variant="h4" sx={{ marginTop: "3em" }}>
                     Цените нас за это
                 </Typography>
@@ -96,6 +96,7 @@ const Main = () => {
                 <Specialists />
                 <Education />
                 <Communication />
+
                 <Typography variant="h4" sx={{ marginTop: "1em" }}>
                     Ближайшие смены
                 </Typography>
@@ -109,7 +110,7 @@ const Main = () => {
                 <Typography variant="h5" sx={{ marginTop: "1em", fontFamily: "Roboto" }}>
                     Поможем с выбором смены
                 </Typography>
-                <Stack spacing={2} direction="row">
+                <Stack spacing={0.7} direction="row">
                     <Level1 /> <Level2 /> <Level3 />
                 </Stack>
                 <Typography variant="h4" sx={{ marginTop: "1em" }}>
