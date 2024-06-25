@@ -2,6 +2,10 @@ import { Avatar, Button, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { NavLink } from "react-router-dom";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 const Profile = () => {
     return (
@@ -14,24 +18,41 @@ const Profile = () => {
             </Grid2>
 
             <Grid2 xs={12}>
-                <Button fullWidth variant="contained" endIcon={<ArrowForwardIosIcon />}>
+                <Button
+                    fullWidth
+                    variant="contained"
+                    endIcon={<ArrowForwardIosIcon sx={{ position: "absolute", right: "10px", top: "14px" }} />}
+                    sx={{ background: "#0066B3", height: "45px", borderRadius: 3, marginTop: "20px", fontFamily: " Roboto" }}
+                >
                     Мои данные
                 </Button>
             </Grid2>
             <Grid2 xs={12}>
-                <Button fullWidth variant="contained" endIcon={<ArrowForwardIosIcon />}>
+                <Button
+                    fullWidth
+                    variant="contained"
+                    endIcon={<ArrowForwardIosIcon sx={{ position: "absolute", right: "10px", top: "14px" }} />}
+                    sx={{ background: "#0066B3", boxSizing: "border-box", height: "45px", borderRadius: 3, fontFamily: " Roboto" }}
+                >
                     Данные ребёнка
                 </Button>
             </Grid2>
 
             <Grid2 xs={12}>
-                <Button fullWidth variant="contained" endIcon={<ArrowForwardIosIcon />}>
+                <Button
+                    fullWidth
+                    variant="contained"
+                    endIcon={<ArrowForwardIosIcon sx={{ position: "absolute", right: "10px", top: "14px" }} />}
+                    sx={{ background: "linear-gradient(to right, #EE2F53, #992037)", height: "45px", borderRadius: 3, marginTop: "20px" }}
+                >
                     Обучение
                 </Button>
             </Grid2>
             <Grid2 xs={12}>
                 <NavLink to="/sign-in_sign_up">
-                    <Button variant="text">Выйти из аккаунта</Button>
+                    <Button variant="text" sx={{ color: "black", marginTop: "15px" }}>
+                        Выйти из аккаунта
+                    </Button>
                 </NavLink>
             </Grid2>
         </Grid2>
