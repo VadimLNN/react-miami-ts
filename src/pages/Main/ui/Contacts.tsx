@@ -30,9 +30,6 @@ const theme = createTheme({
                         "& .MuiOutlinedInput-notchedOutline": {
                             borderColor: "#FFFFFF",
                         },
-                        "& .MuiOutlinedInput-notchedOutline.active": {
-                            borderColor: "#FFFFFF",
-                        },
                     },
                     // Class for the label of the input field
                     "& .MuiInputLabel-outlined": {
@@ -102,6 +99,8 @@ const Contacts = () => {
                         <TextField
                             label="Телефон"
                             type="t_number"
+                            defaultValue="7"
+                            placeholder="913 ??? ?? ??"
                             {...register("t_number", { required: "t_number is requied" })}
                             error={!!errors.t_number}
                             helperText={errors.t_number?.message}
