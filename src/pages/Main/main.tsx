@@ -17,6 +17,7 @@ import Level3 from "./ui/Level3";
 import Skills from "./ui/Skills";
 import FAQ from "./ui/Faq";
 import Contacts from "./ui/Contacts";
+
 const Main = () => {
     // useEffect(() => {
     //     //promis style
@@ -32,40 +33,44 @@ const Main = () => {
     const itemData = [img_tents, img_tents, img_tents, img_tents, img_tents];
 
     return (
-        <>
-            <Stack sx={{ padding: "0.5em" }}>
-                <CardMedia component="img" height="320" image={img_tents} sx={{ borderRadius: 5 }} />
-                <Typography variant="h4" sx={{ marginTop: "1em", fontFamily: "Roboto Black 900" }}>
+        <ThemeProvider theme={theme}>
+            <Stack sx={{ padding: "2vw" }}>
+                <CardMedia component="img" height="300" image={img_tents} sx={{ borderRadius: 5 }} />
+                <Typography variant="h4" sx={{ marginTop: "1em", fontFamily: "Roboto" }}>
                     Погрузись в индустрию IT с детства 🔥
                 </Typography>
-                <Typography sx={{ fontSize: "10pt", marginTop: "1em", lineHeight: 1.5, fontFamily: "Roboto Bold 900" }}>
+                <Typography sx={{ fontSize: "10.5pt", marginTop: "1em", lineHeight: 1.5, fontFamily: "Roboto" }}>
                     Уникальная платформа- детский лагерь сочетается с учебой. Подарите вашему ребенку незабываемые впечатления, новые знания и яркие
                     воспоминания - все это доступно на одной платформе. Давайте создадим незабываемое лето вместе!
                 </Typography>
+
                 <Button
                     variant="contained"
                     sx={{
-                        width: "241px",
+                        width: "70vw",
                         marginTop: "2em",
                         background: "linear-gradient(to right, #EE2F53, #992037)",
                         borderRadius: 3,
-                        fontSize: "12px",
+                        fontSize: "14px",
                         fontFamily: "Roboto",
                     }}
                 >
                     Оставить заявку
                 </Button>
-                <Box sx={{ marginTop: "5em" }}>
+
+                <Box sx={{ marginTop: "15vw", width: "92vw" }}>
                     <ThemeProvider theme={theme}>
                         <CardMedia component="img" height="160" src={img_peop1} />
+
                         <CardMedia component="img" height="160" image={img_peop2} />
                         <CardMedia component="img" height="160" image={img_peop3} />
                     </ThemeProvider>
                 </Box>
-                <Typography variant="h4" sx={{ marginTop: "3em" }}>
+
+                <Typography variant="h4" sx={{ marginTop: "25vw" }}>
                     О сменах
                 </Typography>
-                <Typography sx={{ fontSize: "11pt", marginTop: "1em", lineHeight: 1.5 }}>
+                <Typography sx={{ fontSize: "11pt", marginTop: "4vw", lineHeight: 1.5 }}>
                     Мы специализируемся на организации развивающего отдыха и проведении обучающих курсах для детей возрастом от 13 до 18 лет.
                     <br /> <br /> Здоровый отдых Ваших детей - это наша профессия, которую можно обрести только благодаря опыту креативности, желанию
                     создавать что-то интересное и полезное. У нас Вы можете купить путевку в детский лагеря во время каникул и подобрать увлекательную
@@ -74,14 +79,14 @@ const Main = () => {
                 <Button
                     fullWidth
                     variant="contained"
-                    sx={{ width: "242px", marginTop: "1em", background: "linear-gradient(to right, #EE2F53, #992037)", borderRadius: 3 }}
+                    sx={{ width: "74vw", marginTop: "7vw", background: "linear-gradient(to right, #EE2F53, #992037)", borderRadius: 3 }}
                 >
                     Команда преподавателей
                 </Button>
-                <Typography variant="h5" sx={{ marginTop: "3em" }}>
+                <Typography variant="h5" sx={{ marginTop: "3em", fontWeight: 550 }}>
                     При поддержке
                 </Typography>
-                <ImageList sx={{ width: 360, height: 50 }} cols={5}>
+                <ImageList sx={{ width: 330, height: 50 }} cols={5}>
                     {itemData.map((item) => (
                         <ImageListItem>
                             <CardMedia component="img" height="50" width="50" src={item} />
@@ -89,7 +94,7 @@ const Main = () => {
                     ))}
                 </ImageList>
 
-                <Typography variant="h4" sx={{ marginTop: "3em" }}>
+                <Typography variant="h4" sx={{ marginTop: "20vw" }}>
                     Цените нас за это
                 </Typography>
                 <Safety />
@@ -97,24 +102,30 @@ const Main = () => {
                 <Education />
                 <Communication />
 
-                <Typography variant="h4" sx={{ marginTop: "1em" }}>
+                <Typography variant="h4" sx={{ marginTop: "24vw", textAlign: "center" }}>
                     Ближайшие смены
                 </Typography>
                 <Button
                     fullWidth
                     variant="contained"
-                    sx={{ width: "242px", marginTop: "1em", background: "linear-gradient(to right, #EE2F53, #992037)", borderRadius: 3 }}
+                    sx={{
+                        marginInline: "auto",
+                        width: "242px",
+                        marginTop: "1em",
+                        background: "linear-gradient(to right, #EE2F53, #992037)",
+                        borderRadius: 3,
+                    }}
                 >
                     Все смены
                 </Button>
-                <Typography variant="h5" sx={{ marginTop: "1em", fontFamily: "Roboto" }}>
+                <Typography variant="h5" sx={{ marginTop: "20vw", textAlign: "center" }}>
                     Поможем с выбором смены
                 </Typography>
-                <Stack spacing={0.7} direction="row">
+                <Stack spacing={0.7} direction="row" sx={{ marginTop: "8vw" }}>
                     <Level1 /> <Level2 /> <Level3 />
                 </Stack>
-                <Typography variant="h4" sx={{ marginTop: "1em" }}>
-                    Команда преподавателей
+                <Typography variant="h4" sx={{ marginTop: "20vw" }}>
+                    Команда преподавателей ⚡
                 </Typography>
                 <Typography sx={{ fontSize: "11pt", marginTop: "1em", lineHeight: 1.5 }}>
                     В команде только опытные и ответственные молодые люди, успешно закончившие школу вожатых, имеющие за плечами не одну смену и
@@ -123,13 +134,14 @@ const Main = () => {
                 </Typography>
                 <Skills />
 
-                {/* <div className="FAQ" ref={FAQ}> */}
+                <Typography variant="h6" sx={{ marginTop: "18vw" }}>
+                    Часто задаваемые вопросы
+                </Typography>
                 <FAQ />
-                {/* </div> */}
 
                 <Contacts />
             </Stack>
-        </>
+        </ThemeProvider>
     );
 };
 
