@@ -11,12 +11,10 @@ import Safety from "./ui/Safety";
 import Specialists from "./ui/Specialists";
 import Education from "./ui/Education";
 import Communication from "./ui/Communication";
-import Level1 from "./ui/Level1";
-import Level2 from "./ui/Level2";
-import Level3 from "./ui/Level3";
 import Skills from "./ui/Skills";
 import FAQ from "./ui/Faq";
 import Contacts from "./ui/Contacts";
+import Levels from "./ui/Levels";
 
 const Main = () => {
     // useEffect(() => {
@@ -58,12 +56,26 @@ const Main = () => {
                     Оставить заявку
                 </Button>
 
-                <Box sx={{ marginTop: "15vw", width: "92vw" }}>
+                <Box sx={{ marginTop: "12vw" }}>
                     <ThemeProvider theme={theme}>
-                        <CardMedia component="img" height="160" src={img_peop1} />
-
-                        <CardMedia component="img" height="160" image={img_peop2} />
-                        <CardMedia component="img" height="160" image={img_peop3} />
+                        <CardMedia
+                            sx={{ marginInline: -2.1, border: "solid 5vw white", width: "110%", borderRadius: 8 }}
+                            component="img"
+                            height="160"
+                            src={img_peop1}
+                        />
+                        <CardMedia
+                            sx={{ marginInline: -6, border: "solid 5vw white", width: "110%", borderRadius: 8, marginTop: -2 }}
+                            component="img"
+                            height="160"
+                            image={img_peop2}
+                        />
+                        <CardMedia
+                            sx={{ marginInline: -2.1, border: "solid 5vw white", width: "110%", borderRadius: 8, marginTop: -2 }}
+                            component="img"
+                            height="160"
+                            image={img_peop3}
+                        />
                     </ThemeProvider>
                 </Box>
 
@@ -122,7 +134,9 @@ const Main = () => {
                     Поможем с выбором смены
                 </Typography>
                 <Stack spacing={0.7} direction="row" sx={{ marginTop: "8vw" }}>
-                    <Level1 /> <Level2 /> <Level3 />
+                    <Levels text={"Если Вы только начинаете"} imgName={"heart1.png"} />
+                    <Levels text={"У Вас уже есть опыт"} imgName={"heart2.png"} />
+                    <Levels text={"Не можете выбрать"} imgName={"heart3.png"} />
                 </Stack>
                 <Typography variant="h4" sx={{ marginTop: "20vw" }}>
                     Команда преподавателей ⚡
@@ -141,6 +155,8 @@ const Main = () => {
 
                 <Contacts />
             </Stack>
+
+            <Box sx={{ margin: -1.2, height: 300, background: "hsla(210, 65%, 12%, 1)" }}></Box>
         </ThemeProvider>
     );
 };
