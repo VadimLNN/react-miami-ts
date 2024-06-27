@@ -68,7 +68,7 @@ const Main = () => {
                             src={img_peop1}
                         />
                         <CardMedia
-                            sx={{ marginInline: -6, border: "solid 5vw white", width: "110%", borderRadius: 8, marginTop: -2 }}
+                            sx={{ marginInline: -7, border: "solid 5vw white", width: "110%", borderRadius: 8, marginTop: -2 }}
                             component="img"
                             height="160"
                             image={img_peop2}
@@ -174,7 +174,7 @@ const Main = () => {
                 </Typography>
                 <Skills />
 
-                <Typography variant="h6" sx={{ marginTop: "18vw" }}>
+                <Typography variant="h5" sx={{ marginTop: "18vw", textAlign: "center" }}>
                     Часто задаваемые вопросы
                 </Typography>
                 <FAQ />
