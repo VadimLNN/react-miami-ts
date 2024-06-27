@@ -74,7 +74,7 @@ const Contacts = () => {
     const notify = () => toast("Заскамили мамонта");
     return (
         <>
-            <Box sx={{ padding: "5vw", marginTop: "20vw", borderRadius: 4, background: "radial-gradient(#3E7CFE, #2850A3)" }}>
+            <Box sx={{ padding: "5vw", marginBlock: "20vw", borderRadius: 4, background: "radial-gradient(#3E7CFE, #2850A3)" }}>
                 <Typography sx={{ fontSize: "24px", marginTop: "4vw", lineHeight: "1.3", color: "white" }}>
                     Оставьте контакты, и мы поможем подобрать IT-смену для вашего ребенка
                 </Typography>
