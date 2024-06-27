@@ -9,22 +9,30 @@ import { DevTool } from "@hookform/devtools";
 import "react-toastify/dist/ReactToastify.css";
 
 const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#FFFFFF",
+        },
+    },
     components: {
         MuiButton: {
             styleOverrides: {
                 root: {
                     textTransform: "none",
                     padding: "0.7em",
+                    color: "white",
                 },
             },
         },
         MuiTextField: {
             styleOverrides: {
                 root: {
+                    borderRadius: "15px",
+                    background: alpha("#FFFFFF", 0.15),
+                    input: { color: "white" },
                     // Root class for the input field
                     "& .MuiOutlinedInput-root": {
-                        color: "FFFFFF",
-                        bgcolor: alpha("#FFFFFF", 0.1),
+                        // color: "FFFFFF",
                         borderRadius: "15px",
                         // Class for the border around the input field
                         "& .MuiOutlinedInput-notchedOutline": {
@@ -65,64 +73,56 @@ const Contacts = () => {
 
     const notify = () => toast("Заскамили мамонта");
     return (
-        <ThemeProvider theme={theme}>
-            <Box
-                sx={{
-                    width: 340,
-                    height: 550,
-                    marginTop: 3,
-                    borderRadius: 4,
-
-                    background: "radial-gradient(#3E7CFE, #2850A3)",
-                }}
-            >
-                <Typography sx={{ fontSize: "24px", marginTop: "1em", lineHeight: "1.5", color: "white", marginLeft: "14px" }}>
+        <>
+            <Box sx={{ padding: "5vw", marginTop: "20vw", borderRadius: 4, background: "radial-gradient(#3E7CFE, #2850A3)" }}>
+                <Typography sx={{ fontSize: "24px", marginTop: "4vw", lineHeight: "1.3", color: "white" }}>
                     Оставьте контакты, и мы поможем подобрать IT-смену для вашего ребенка
                 </Typography>
 
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <Stack spacing={2} sx={{ padding: "1em" }}>
-                        <TextField
-                            label="Имя"
-                            type="name"
-                            {...register("name", { required: "Это поле обязательно" })}
-                            error={!!errors.name}
-                            helperText={errors.name?.message}
-                        />
-                        <TextField
-                            label="Почта"
-                            type="email"
-                            {...register("email", { required: "Email is requied" })}
-                            error={!!errors.email}
-                            helperText={errors.email?.message}
-                        />
-                        <TextField
-                            label="Телефон"
-                            type="t_number"
-                            defaultValue="7"
-                            placeholder="913 ??? ?? ??"
-                            {...register("t_number", { required: "t_number is requied" })}
-                            error={!!errors.t_number}
-                            helperText={errors.t_number?.message}
-                        />
-                    </Stack>
-                    <Button
-                        fullWidth
-                        variant="contained"
-                        sx={{
-                            width: "310px",
-                            marginTop: "1em",
-                            background: "linear-gradient(to right, #EE2F53, #992037)",
-                            borderRadius: 3,
-                            marginLeft: "14px",
-                        }}
-                    >
-                        Отправить
-                    </Button>
-                </form>
-                <DevTool control={control} />
-
-                <Typography sx={{ fontSize: "14px", marginTop: "1em", lineHeight: "1.5", color: "white", marginLeft: "14px" }}>
+                <ThemeProvider theme={theme}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <Stack spacing={2} sx={{ marginTop: "7vw" }}>
+                            <TextField
+                                color="primary"
+                                label="Имя"
+                                type="name"
+                                {...register("name", { required: "Это поле обязательно" })}
+                                error={!!errors.name}
+                                helperText={errors.name?.message}
+                            />
+                            <TextField
+                                label="Почта"
+                                type="email"
+                                {...register("email", { required: "Это поле обязательно" })}
+                                error={!!errors.email}
+                                helperText={errors.email?.message}
+                            />
+                            <TextField
+                                label="Телефон"
+                                type="t_number"
+                                defaultValue="7"
+                                // placeholder="913 ??? ?? ??"
+                                {...register("t_number", { required: "Это поле обязательно" })}
+                                error={!!errors.t_number}
+                                helperText={errors.t_number?.message}
+                            />
+                        </Stack>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{
+                                marginTop: "8vw",
+                                background: "linear-gradient(to right, #EE2F53, #992037)",
+                                borderRadius: 3,
+                            }}
+                        >
+                            Отправить
+                        </Button>
+                    </form>
+                    <DevTool control={control} />
+                </ThemeProvider>
+                <Typography sx={{ padding: "2vw", fontSize: "13px", marginTop: "5vw", lineHeight: "1.3", color: "white" }}>
                     Нажимая кнопку, я соглашаюсь с{" "}
                     <a href="" style={{ color: "white" }}>
                         Положением о персональных данных
@@ -130,7 +130,7 @@ const Contacts = () => {
                     и даю согласие на их обработку и хранение
                 </Typography>
             </Box>
-        </ThemeProvider>
+        </>
     );
 };
 
