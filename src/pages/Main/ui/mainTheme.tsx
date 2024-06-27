@@ -2,11 +2,25 @@ import { createTheme } from "@mui/material";
 
 const theme = createTheme({
     components: {
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    fontWeight: 500,
+                },
+            },
+        },
         MuiCardMedia: {
             styleOverrides: {
                 root: {
                     borderRadius: 15,
-                    // border: "20px solid red",
+                },
+            },
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    textTransform: "none",
+                    padding: "0.7em",
                 },
             },
         },
