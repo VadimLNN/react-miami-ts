@@ -20,9 +20,9 @@ const Communication = () => {
                     marginTop: 3,
                     borderRadius: 3,
                     bgcolor: "primary.main",
-                    "&:hover": {
-                        bgcolor: "primary.dark",
-                    },
+                    // "&:hover": {
+                    //     bgcolor: "primary.dark",
+                    // },
                 }}
             >
                 <Diversity1OutlinedIcon style={{ color: "#EE2F53", marginTop: "7", marginLeft: "0.5em", fontSize: "28px" }} />
