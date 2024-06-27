@@ -8,17 +8,18 @@ interface Level {
 const Levels = (props: Level): JSX.Element => (
     <Box
         sx={{
-            padding: "1.3em",
+            minWidth: "20vw",
+            padding: "6vw",
             borderRadius: 4,
             bgcolor: "hsla(221, 86%, 94%, 1)",
         }}
     >
-        <Typography sx={{ fontSize: "12px", textAlignLast: "center", lineHeight: "1" }}>{props.text}</Typography>
+        <Typography sx={{ fontSize: "12px", textAlign: "center", lineHeight: "1" }}>{props.text}</Typography>
         <CardMedia
             image={`/src/shared/ui/imgs/${props.imgName}`}
             component="img"
-            height="45"
-            sx={{ borderRadius: 5, objectFit: "contain", marginTop: "0.3em" }}
+            height="50"
+            sx={{ borderRadius: 5, objectFit: "contain", marginTop: "5vw" }}
         />
     </Box>
 );

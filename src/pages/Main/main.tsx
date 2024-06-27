@@ -161,8 +161,8 @@ const Main = () => {
                 </Typography>
                 <Stack spacing={0.7} direction="row" sx={{ marginTop: "8vw" }}>
                     <Levels text={"Если Вы только начинаете"} imgName={"heart1.png"} />
-                    <Levels text={"У Вас уже есть опыт"} imgName={"heart2.png"} />
-                    <Levels text={"Не можете выбрать"} imgName={"heart3.png"} />
+                    <Levels text={"У вас уже есть какой-либо опыт"} imgName={"heart2.png"} />
+                    <Levels text={"Не знаете свой уровень"} imgName={"heart3.png"} />
                 </Stack>
                 <Typography variant="h4" sx={{ marginTop: "20vw" }}>
                     Команда преподавателей ⚡
