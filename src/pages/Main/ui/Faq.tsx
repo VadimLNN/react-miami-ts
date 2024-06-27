@@ -2,15 +2,45 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
+import { createTheme, alpha } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+
+const theme = createTheme({
+    components: {
+        MuiAccordionSummary: {
+            styleOverrides: {
+                root: {
+                    fontFamily: "Roboto",
+                    fontWeight: 400,
+                },
+            },
+        },
+        MuiAccordionDetails: {
+            styleOverrides: {
+                root: {
+                    fontFamily: "Roboto",
+                    fontWeight: 400,
+                },
+            },
+        },
+        MuiAccordion: {
+            styleOverrides: {
+                root: {
+                    marginTop: "2vw",
+                },
+            },
+        },
+    },
+});
 
 const FAQ = () => {
     return (
-        <div>
-            <Accordion sx={{ marginTop: "1em" }}>
+        <ThemeProvider theme={theme}>
+            <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content" id="panel1-header">
                     Можно ли выбрать сразу 2 направления?
                 </AccordionSummary>
-                <AccordionDetails>Да хоть 5! Хочешь и рыбку съесть и на рыбку рыбку сесть?</AccordionDetails>
+                <AccordionDetails> Да хоть 5! Хочешь и рыбку съесть и на рыбку рыбку сесть?</AccordionDetails>
             </Accordion>
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel2-content" id="panel2-header">
@@ -30,7 +60,7 @@ const FAQ = () => {
                 </AccordionSummary>
                 <AccordionDetails>Паспорт и много денег</AccordionDetails>
             </Accordion>
-        </div>
+        </ThemeProvider>
     );
 };
 
