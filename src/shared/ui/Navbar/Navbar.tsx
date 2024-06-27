@@ -26,7 +26,7 @@ export default function Navbar() {
     };
 
     const DrawerList = (
-        <Box sx={{ width: 360 }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: "100vw" }} role="presentation" onClick={toggleDrawer(false)}>
             <IconButton onClick={toggleDrawer(false)} sx={{ marginTop: "10px", marginLeft: "10px" }}>
                 <ClearIcon fontSize="medium" />
             </IconButton>
@@ -54,9 +54,7 @@ export default function Navbar() {
                 </ListItem>
                 <ListItem key={4} disablePadding>
                     <ListItemButton>
-                        <NavLink to="/FAQ" style={{ textDecoration: "none" }}>
-                            <ListItemText primary={"Часто задаваемые вопросы"} />
-                        </NavLink>
+                        <ListItemText primary={"Часто задаваемые вопросы"} />
                     </ListItemButton>
                 </ListItem>
                 <ListItem key={5} disablePadding>
