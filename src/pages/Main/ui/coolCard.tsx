@@ -22,7 +22,7 @@ const CoolCard = (props: CoolCardProps): JSX.Element => (
     >
         <Box
             sx={{
-                width: "90vw",
+                width: "87vw",
                 paddingBlock: "3vw",
                 paddingInline: "2vw",
                 marginTop: 3,
