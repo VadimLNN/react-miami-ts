@@ -1,20 +1,23 @@
 // import { useEffect } from "react";
 // import { createPost, getImg, getPosts, getPostsController } from "./api/requests";
 import { Box, Button, CardMedia, ImageList, ImageListItem, Stack, Typography } from "@mui/material";
+import Diversity1OutlinedIcon from "@mui/icons-material/Diversity1Outlined";
+import PeopleOutlineOutlinedIcon from "@mui/icons-material/PeopleOutlineOutlined";
+import HealthAndSafetyOutlinedIcon from "@mui/icons-material/HealthAndSafetyOutlined";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import { ThemeProvider } from "@emotion/react";
+
 import img_tents from "../../shared/ui/imgs/tents.png";
 import img_peop1 from "../../shared/ui/imgs/peop1.png";
 import img_peop2 from "../../shared/ui/imgs/peop2.png";
 import img_peop3 from "../../shared/ui/imgs/peop3.png";
+
 import theme from "./ui/mainTheme";
-import Safety from "./ui/Safety";
-import Specialists from "./ui/Specialists";
-import Education from "./ui/Education";
-import Communication from "./ui/Communication";
 import Skills from "./ui/Skills";
 import FAQ from "./ui/Faq";
 import Contacts from "./ui/Contacts";
 import Levels from "./ui/Levels";
+import CoolCard from "./ui/coolCard";
 
 const Main = () => {
     // useEffect(() => {
@@ -109,10 +112,33 @@ const Main = () => {
                 <Typography variant="h4" sx={{ marginTop: "20vw" }}>
                     Цените нас за это
                 </Typography>
-                <Safety />
-                <Specialists />
-                <Education />
-                <Communication />
+
+                <CoolCard
+                    icon={HealthAndSafetyOutlinedIcon}
+                    title={"Безопасность детей"}
+                    text={"Наш приоритет"}
+                    color={{ iconColor: "green", bgColor: "#E4FDEF", textColor: "#00866E" }}
+                ></CoolCard>
+                <CoolCard
+                    icon={PeopleOutlineOutlinedIcon}
+                    title={"Команда специалистов"}
+                    text={
+                        "Наши вожатые - лицо лагеря, где каждый прошел тщательную подготовку в нашей школе вожатых умеет не только найти подход к ребятам, но и понимает, что на нём лежит ответственность"
+                    }
+                    color={{ iconColor: "#5C1D9A", bgColor: "#EBE4FD", textColor: "#32009C" }}
+                ></CoolCard>
+                <CoolCard
+                    icon={SchoolOutlinedIcon}
+                    title={"Образование не для галочки"}
+                    text={"Профессионально обучаем детей от ВУЗа “СибГУТИ”. Только современный стек технологий, всё лучшее детям"}
+                    color={{ iconColor: "#0066B3", bgColor: "#E4ECFD", textColor: "#0066B3" }}
+                ></CoolCard>
+                <CoolCard
+                    icon={Diversity1OutlinedIcon}
+                    title={"Общение"}
+                    text={"Дети поддерживают связь после смены, а мы стараемся способствовать этому"}
+                    color={{ iconColor: "#EE2F53", bgColor: "#FDE4EA", textColor: "#B30000" }}
+                ></CoolCard>
 
                 <Typography variant="h4" sx={{ marginTop: "24vw", textAlign: "center" }}>
                     Ближайшие смены
