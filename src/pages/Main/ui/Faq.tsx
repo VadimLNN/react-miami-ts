@@ -27,6 +27,7 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     marginTop: "2vw",
+                    borderRadius: 15,
                 },
             },
         },
@@ -36,7 +37,7 @@ const theme = createTheme({
 const FAQ = () => {
     return (
         <ThemeProvider theme={theme}>
-            <Accordion>
+            <Accordion sx={{ marginTop: "10vw" }}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content" id="panel1-header">
                     Можно ли выбрать сразу 2 направления?
                 </AccordionSummary>
