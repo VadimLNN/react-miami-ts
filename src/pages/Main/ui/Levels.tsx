@@ -9,7 +9,7 @@ const Levels = (props: Level): JSX.Element => (
     <Box
         sx={{
             minWidth: "20vw",
-            padding: "6vw",
+            padding: "4vw",
             borderRadius: 4,
             bgcolor: "hsla(221, 86%, 94%, 1)",
         }}
