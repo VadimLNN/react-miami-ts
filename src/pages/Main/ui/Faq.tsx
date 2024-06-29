@@ -2,7 +2,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import { createTheme, alpha } from "@mui/material";
+import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 
 const theme = createTheme({
