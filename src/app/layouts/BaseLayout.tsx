@@ -19,8 +19,7 @@ function BaseLayout() {
                     <Route path="/profile" element={<Profile />} />
                     {/* // <Route path="/aboutUs" element={< />} /> */}
                     <Route path="/campingSeasons" element={<CampingSeasons />} />
-                    {/* <Route path="/FAQ" element={< />} />
-                    <Route path="/feedback" element={< />} />
+                    {/*Route path="/feedback" element={< />} />
                     <Route path="/partners" element={< />} />
                     <Route path="/gallery" element={< />} /> */}
                 </Routes>
