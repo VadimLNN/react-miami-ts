@@ -59,7 +59,7 @@ const Main = () => {
                     Оставить заявку
                 </Button>
 
-                <Box sx={{ marginTop: "12vw" }}>
+                <Box sx={{ marginTop: "12vw", overflow: "hidden" }}>
                     <ThemeProvider theme={theme}>
                         <CardMedia
                             sx={{ marginInline: -2.1, border: "solid 5vw white", width: "110%", borderRadius: 8 }}
@@ -174,15 +174,14 @@ const Main = () => {
                 </Typography>
                 <Skills />
 
-                <Typography variant="h5" sx={{ marginTop: "18vw", textAlign: "center" }}>
+                <Typography variant="h5" sx={{ marginTop: "18vw", textAlign: "center", fontWeight: 550 }}>
                     Часто задаваемые вопросы
                 </Typography>
                 <FAQ />
 
                 <Contacts />
             </Stack>
-
-            <Box sx={{ margin: -1.2, height: 300, background: "hsla(210, 65%, 12%, 1)" }}></Box>
+            <Box sx={{ margin: "0vw -3vw -3vw -3vw", height: 300, background: "hsla(210, 65%, 12%, 1)" }}></Box>
         </ThemeProvider>
     );
 };
