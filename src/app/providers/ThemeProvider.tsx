@@ -22,7 +22,7 @@ const DemoTheme = () => {
         },
         palette: {
             primary: {
-                main: "#4C7EE0",
+                main: "#EE2F53",
             },
             secondary: {
                 main: "#E34E30",
