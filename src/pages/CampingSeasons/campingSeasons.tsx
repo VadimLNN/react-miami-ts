@@ -89,7 +89,7 @@ const CampingSeasons = () => {
             </Stack>
             <CampSeason
                 title={"Pro лето"}
-                text={"Основы веб-дизайна Использование + основы async / await Анимация"}
+                text={"Основы веб-дизайна Использование + основы Анимации"}
                 tegs={["Бесплатно", "Анимация", "Дезигн"]}
                 img={"season_cat.png"}
                 color={"hsla(148, 86%, 94%, 1)"}

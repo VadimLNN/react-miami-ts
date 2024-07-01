@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import DemoTheme from "../providers/ThemeProvider";
 import Navbar from "../../shared/ui/Navbar/Navbar";
-import CampingSeasons from "../../pages/CampingSeasons/campingSeason";
+import CampingSeasons from "../../pages/CampingSeasons/campingSeasons";
 import { RegisterForm } from "../../pages/Sign-in_Sign-up/registerForm";
 import Main from "../../pages/Main/main";
 import Profile from "../../pages/Profile/profile";
