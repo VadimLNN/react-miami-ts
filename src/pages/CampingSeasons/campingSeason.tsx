@@ -1,28 +1,28 @@
 import SearchBar from "material-ui-search-bar";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Card, CardActionArea, CardContent, CardMedia, Stack, ThemeProvider, Typography } from "@mui/material";
+import { Card, CardActionArea, CardContent, CardMedia, Stack, Typography } from "@mui/material";
 import { useState } from "react";
-import TuneIcon from "@mui/icons-material/Tune";
-import theme from "./ui/russoOneFontTheme";
+import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
 
 const CampingSeasons = () => {
-    const [state, setState] = useState("");
+    const [search, setsearch] = useState("");
     const doSomethingWith = () => {
-        console.log(`${state} `);
+        console.log(`${search} `);
     };
+
     return (
         <Grid2 container spacing={2}>
             <Grid2 xs={12}>
-                <ThemeProvider theme={theme}>
-                    <Typography variant="h3">СМЕНЫ</Typography>
-                </ThemeProvider>
+                <Typography variant="h3" sx={{ fontSize: "1.5em", textAlign: "center", marginTop: "20vw", fontFamily: "Russo One" }}>
+                    СМЕНЫ
+                </Typography>
             </Grid2>
 
-            <Grid2>
-                <SearchBar value={state} onChange={(newValue) => setState(String(newValue))} onRequestSearch={() => doSomethingWith()} />
+            <Grid2 xs={10}>
+                <SearchBar value={search} onChange={(newValue) => setsearch(String(newValue))} onRequestSearch={() => doSomethingWith()} />
             </Grid2>
-            <Grid2>
-                <TuneIcon />
+            <Grid2 xs={2}>
+                <TuneRoundedIcon />
             </Grid2>
             <Card sx={{ maxWidth: 345, borderRadius: 5, background: "#B5C1DB" }}>
                 <CardActionArea>
