@@ -40,8 +40,8 @@ export default function Navbar() {
                 </ListItem>
                 <ListItem key={2} disablePadding>
                     <ListItemButton>
-                        <NavLink to="/aboutUs" style={{ textDecoration: "none" }}>
-                            <ListItemText primary={"О нас"} />
+                        <NavLink to="/Login" style={{ textDecoration: "none" }}>
+                            <ListItemText primary={"Войти"} />
                         </NavLink>
                     </ListItemButton>
                 </ListItem>
