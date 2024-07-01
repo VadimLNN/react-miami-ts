@@ -6,6 +6,7 @@ import CampingSeasons from "../../pages/CampingSeasons/campingSeasons";
 import { RegisterForm } from "../../pages/Sign-in_Sign-up/registerForm";
 import Main from "../../pages/Main/main";
 import Profile from "../../pages/Profile/profile";
+import Login from "../../pages/Login/Login";
 
 function BaseLayout() {
     return (
@@ -17,7 +18,7 @@ function BaseLayout() {
                     <Route path="/" element={<Main />} />
                     <Route path="/sign-in_sign_up" element={<RegisterForm />} />
                     <Route path="/profile" element={<Profile />} />
-                    {/* // <Route path="/aboutUs" element={< />} /> */}
+                    <Route path="/Login" element={<Login />} />
                     <Route path="/campingSeasons" element={<CampingSeasons />} />
                     {/*Route path="/feedback" element={< />} />
                     <Route path="/partners" element={< />} />
