@@ -29,8 +29,9 @@ const CampSeason = (props: SeasonProps): JSX.Element => (
                     <CardMedia sx={{ margin: "auto", marginTop: "4vw" }} component="img" image={`/src/shared/ui/imgs/${props.img}`} />
                 </Grid2>
                 <Stack direction={"row"} useFlexGap flexWrap="wrap">
-                    {props.tegs.map((item) => (
+                    {props.tegs.map((item, i) => (
                         <Typography
+                            key={i}
                             sx={{
                                 fontSize: "10pt",
                                 border: "1px hsla(210, 65%, 12%, 1) solid",
