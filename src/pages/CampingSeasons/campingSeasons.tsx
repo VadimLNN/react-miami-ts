@@ -6,6 +6,7 @@ import { ClearIcon } from "@mui/x-date-pickers/icons";
 import React from "react";
 import { useState } from "react";
 import CampSeason from "./ui/seasonCard";
+import FilterBox from "./ui/filterBox";
 
 const CampingSeasons = () => {
     const [search, setsearch] = useState("");
@@ -36,15 +37,29 @@ const CampingSeasons = () => {
                 <Grid2 xs={12}>
                     <Typography textAlign={"center"}>Направление</Typography>
                 </Grid2>
-                <Stack> </Stack>
+                <Stack direction={"row"} useFlexGap flexWrap="wrap">
+                    <FilterBox img={"filter_card.png"} text={"Дизайн"} />
+                    <FilterBox img={"filter_card.png"} text={"3D"} />
+                    <FilterBox img={"filter_card.png"} text={"Геймдизайн"} />
+                    <FilterBox img={"filter_card.png"} text={"Видеомонтаж"} />
+                    <FilterBox img={"filter_card.png"} text={"Программирование"} />
+                    <FilterBox img={"filter_card.png"} text={"Программирование"} />{" "}
+                </Stack>
                 <Grid2 xs={12}>
                     <Typography textAlign={"center"}>Стоимость</Typography>
                 </Grid2>
-                <Stack></Stack>
+                <Stack direction={"row"} useFlexGap flexWrap="wrap">
+                    <FilterBox img={"filter_card.png"} text={"Бесплатно"} />
+                    <FilterBox img={"filter_card.png"} text={"Платно"} />
+                    <FilterBox img={"filter_card.png"} text={"До 30 000"} />
+                </Stack>
                 <Grid2 xs={12}>
                     <Typography textAlign={"center"}>Длительность</Typography>
                 </Grid2>
-                <Stack></Stack>
+                <Stack direction={"row"} useFlexGap flexWrap="wrap">
+                    <FilterBox img={"filter_card.png"} text={"7 дней"} />
+                    <FilterBox img={"filter_card.png"} text={"2 недели"} />
+                </Stack>
             </Grid2>
         </Box>
     );
@@ -73,7 +88,7 @@ const CampingSeasons = () => {
                 </SwipeableDrawer>
             </Grid2>
             <Stack direction={"row"} useFlexGap flexWrap="wrap" sx={{ marginLeft: "4vw" }}>
-                {tagList.map((tag) => (
+                {tagList.map((tag, i) => (
                     <Typography
                         sx={{
                             fontSize: "10pt",
@@ -82,6 +97,7 @@ const CampingSeasons = () => {
                             padding: "2vw",
                             margin: "1vw",
                         }}
+                        key={i}
                     >
                         {tag}
                     </Typography>
