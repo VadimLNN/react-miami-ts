@@ -1,7 +1,7 @@
 import { Typography, Box, Card, Stack } from "@mui/material";
 import Title from "./ui/Title";
 // import Causes from "./ui/causess";
-import Form from "./ui/Form";
+import Form from "./ui/Contacts";
 import Causes from "./ui/Causes";
 
 const Parthners = () => {
