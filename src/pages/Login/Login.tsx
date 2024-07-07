@@ -7,17 +7,17 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import "react-toastify/dist/ReactToastify.css";
 import theme from "../Sign-in_Sign-up/ui/FormTheme";
 import { ThemeProvider } from "@emotion/react";
+import axios from "axios";
 
 type FormValues = {
     email: string;
-    t_number: string;
     password: string;
 };
 
+axios.defaults.baseURL = "";
 const Login = () => {
     const validationSchema = yup.object({
         email: yup.string().required("Это поле обязательно"),
-        t_number: yup.string().required("Это поле обязательно"),
         password: yup.string().required("Это поле обязательно"),
     });
 
@@ -27,13 +27,14 @@ const Login = () => {
 
     const { errors } = formState;
 
-    const onSubmit = (data: FormValues) => {
-        console.log(data);
+    const onSubmit = async () => {
+        const user = await axios.post("http://172.20.10.12:4200/api/auth/login", { email: "test@test.ru", password: "password" });
+        console.log(user.data);
     };
 
     return (
         <ThemeProvider theme={theme}>
-            <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: "20vw" }}>
+            <form style={{ marginTop: "20vw" }}>
                 <Stack spacing={2} sx={{ padding: "1em" }}>
                     <Typography variant="h4" sx={{ textAlign: "center" }}>
                         Вход в аккаунт
@@ -57,6 +58,7 @@ const Login = () => {
                 </Stack>
                 <Box textAlign="center">
                     <Button
+                        onClick={onSubmit}
                         fullWidth
                         variant="contained"
                         sx={{
