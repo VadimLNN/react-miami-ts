@@ -7,6 +7,7 @@ import { RegisterForm } from "../../pages/Sign-in_Sign-up/registerForm";
 import Main from "../../pages/Main/main";
 import Profile from "../../pages/Profile/profile";
 import Login from "../../pages/Login/Login";
+import Parthners from "../../pages/Partners/Parthners";
 
 function BaseLayout() {
     return (
@@ -20,9 +21,9 @@ function BaseLayout() {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/campingSeasons" element={<CampingSeasons />} />
-                    {/*Route path="/feedback" element={< />} />
-                    <Route path="/partners" element={< />} />
-                    <Route path="/gallery" element={< />} /> */}
+                    {/* <Route path="/feedback" element={< />} /> */}
+                    <Route path="/partners" element={<Parthners />} />
+                    {/* <Route path="/gallery" element={< />} /> */}
                 </Routes>
             </Router>
         </ThemeProvider>
