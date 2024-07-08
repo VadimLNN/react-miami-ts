@@ -13,13 +13,9 @@ const Parthners = () => {
                 Зовите нас когда
             </Typography>
 
-            <Causes />
-
-            {/* <Card sx={{height: 100, color: "red"}}>
-                <Stack direction={"row"}>
-                    <Typography variant="h4">1</Typography>
-                <Typography>Нужно прокачать детей и вернуть им желание творить</Typography>
-            </Stack></Card> */}
+            <Causes num={1} text={"Нужно прокачать детей и вернуть им желание творить"} />
+            <Causes num={2} text={"Хотите погрузить народ в индустрию IT c детства "} />
+            <Causes num={3} text={"Требуется креативный и полезный тимбилдинг"} />
 
             <Typography
                 variant="h3"
@@ -35,14 +31,16 @@ const Parthners = () => {
             >
                 50+ компаний <br /> присоединились <br /> к СМЕНАМ и двигают <br /> индустрию
             </Typography>
-            <Typography sx={{ fontSize: "10.5pt", marginTop: "1em", lineHeight: 1.5, fontFamily: "Roboto", color: "#FFFFFF", marginLeft: "2em" }}>
+            <Typography sx={{ fontSize: "10.5pt", marginBlock: "5vh", lineHeight: 1.5, fontFamily: "Roboto", color: "#FFFFFF", marginLeft: "2em" }}>
                 300+ учеников, которые поймали интерес <br /> и теперь не могут остановиться
             </Typography>
 
-            <Typography variant="h5" sx={{ marginTop: "80px", textAlign: "center", color: "#FFFFFF", marginBottom: "1em" }}>
+            {/* <Typography variant="h5" sx={{ marginTop: "80px", textAlign: "center", color: "#FFFFFF", marginBottom: "1em" }}>
                 Наши коллабы в СМИ
-            </Typography>
+            </Typography> */}
+
             <Form />
+            <Box sx={{ height: "9vh" }}></Box>
         </Box>
     );
 };
