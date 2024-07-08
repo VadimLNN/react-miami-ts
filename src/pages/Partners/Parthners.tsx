@@ -1,4 +1,4 @@
-import { Typography, Box, Card, Stack } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import Title from "./ui/Title";
 // import Causes from "./ui/causess";
 import Form from "./ui/Contacts";
