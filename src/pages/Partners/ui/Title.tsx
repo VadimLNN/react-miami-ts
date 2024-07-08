@@ -4,11 +4,11 @@ const Title = () => {
         <Box sx={{ width: "100%", height: "calc(100% - 170px)", overflow: "auto", background: "#FFFFFF", borderRadius: 5 }}>
             <Stack sx={{ padding: "2vw" }}>
                 <CardMedia component="img" height="300" image={"/src/shared/ui/imgs/ptrs.jpg"} sx={{ borderRadius: 5 }} />
-                <Typography variant="h4" sx={{ marginTop: "1em" }}>
+                <Typography variant="h4" sx={{ marginTop: "1em", fontWeight: 500 }}>
                     {" "}
                     Смены для вашего лагеря
                 </Typography>
-                <Typography sx={{ fontSize: "10.5pt", marginTop: "1em", lineHeight: 1.5, fontFamily: "Roboto" }}>
+                <Typography sx={{ fontSize: "10.5pt", marginTop: "1em", lineHeight: 1.5, fontFamily: "Roboto", fontWeight: 500 }}>
                     Возьмем на себя образовательную функцию и приведём дела в творческий порядок
                 </Typography>
                 <Box textAlign="center">
