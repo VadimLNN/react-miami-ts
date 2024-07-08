@@ -9,7 +9,7 @@ const Parthners = () => {
         <Box sx={{ backgroundColor: "#0B1F33", margin: "0vw -2vw -2vw -2vw" }}>
             <Title />
 
-            <Typography variant="h5" sx={{ marginTop: "80px", textAlign: "center", color: "#FFFFFF", marginBottom: "1em" }}>
+            <Typography variant="h5" sx={{ marginTop: "80px", marginLeft: "6vw", color: "#FFFFFF", marginBottom: "1em", fontWeight: 500 }}>
                 Зовите нас когда
             </Typography>
 
