@@ -1,19 +1,21 @@
-import { Box, Stack , Typography} from "@mui/material"
+import { alpha, Box, Stack, Typography } from "@mui/material";
 
-const Causes = () => {
-    return (
-        <>
-        <Box sx={{height: "100px", bgcolor: "#FAE4FD", opacity: 1, color: "white"}}>
-        <Stack direction={"row"}>
-        <Typography variant="h4" sx={{opacity:1
-        }}>1</Typography>
-        <Typography>Нужно прокачать детей и вернуть им желание творить</Typography>
-        </Stack>
-        </Box> 
-        
-        </> 
-        
-    );
+interface CausesProps {
+    num: number;
+    text: string;
 }
- 
+
+const Causes = (props: CausesProps): JSX.Element => (
+    <>
+        <Box sx={{ minHeight: "80px", bgcolor: alpha("#FAE4FD", 0.05), color: "white", margin: "3vh", borderRadius: 4 }}>
+            <Stack direction={"row"}>
+                <Typography variant="h4" sx={{ opacity: 1 }}>
+                    {props.num}
+                </Typography>
+                <Typography sx={{ opacity: 1 }}>{props.text} </Typography>
+            </Stack>
+        </Box>
+    </>
+);
+
 export default Causes;
